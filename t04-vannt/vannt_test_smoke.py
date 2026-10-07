@@ -16,5 +16,3 @@ def test_smoke_the_internet():
         print("\nSmoke test thanh cong: Trang web dung tieu de!")
     finally:
         driver.quit()
-
-
