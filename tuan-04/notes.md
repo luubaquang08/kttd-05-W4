@@ -10,10 +10,13 @@
 ---
 
 ### 2. Trả lời câu hỏi phần đọc / lý thuyết
-* **Câu hỏi 1: Vì sao cần phải gọi `driver.quit()` trong khối `finally` hoặc fixture teardown?**
-  * *Trả lời:* Để đảm bảo dù test case có chạy thành công (`PASSED`) hay gặp lỗi văng Exception (`FAILED`), tiến trình trình duyệt Chrome chạy ngầm vẫn luôn được đóng giải phóng RAM và CPU cho hệ thống.
-* **Câu hỏi 2: Sự khác nhau giữa `assert` trong test case và lệnh `print` thông thường là gì?**
-  * *Trả lời:* `print` chỉ in thông tin ra màn hình console để quan sát, không quyết định kết quả test. Còn `assert` là điều kiện kiểm tra logic, nếu sai sẽ ném ra `AssertionError` để pytest đánh dấu test case là thất bại (`FAILED`).
+* **Câu hỏi 1: Muốn nhập chữ vào một ô thì dùng lệnh gì?**
+  * *Trả lời:* Trong Selenium, để nhập chữ vào một ô input ta dùng phương thức send_keys("nội dung cần nhập") của element (ví dụ: element.send_keys("admin")). Trước khi nhập nội dung mới, nên dùng thêm element.clear() nếu cần xoá chữ mặc định có sẵn trong ô.
+* **Câu hỏi 2: Làm thế nào để biết id của một ô nhập trên trang?**
+  * *Trả lời:* 
+  1. Nhấp chuột phải trực tiếp vào ô nhập trên trình duyệt và chọn Inspect (Kiểm tra) để mở Chrome DevTools. 
+  2. Hoặc bấm phím tắt F12 (hoặc Ctrl + Shift + C), sau đó dùng biểu tượng con trỏ chuột ở góc trái bảng DevTools trỏ thẳng vào ô nhập.
+  3. Nhìn vào thẻ HTML được bôi sáng trong tab Elements (thường là thẻ <input ...>), tìm thuộc tính id="..." để lấy giá trị ID của ô đó.
 
 ---
 
